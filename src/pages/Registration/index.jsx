@@ -15,7 +15,9 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { IconButton, InputAdornment } from "@mui/material";
 export const Registration = () => {
   const dispatch = useDispatch();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const isAuth = useSelector(selectIsAuth);
   const {
     register,
