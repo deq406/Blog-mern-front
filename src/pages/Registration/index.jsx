@@ -10,7 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { fetchRegister, selectIsAuth } from "../../redux/slices/auth";
 import { Navigate } from "react-router-dom";
-
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { IconButton, InputAdornment } from "@mui/material";
 export const Registration = () => {
   const dispatch = useDispatch();
 
@@ -75,6 +77,20 @@ export const Registration = () => {
           fullWidth
           error={Boolean(errors.password?.message)}
           helperText={errors.password?.message}
+          type={showPassword ? "text" : "password"}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
           {...register("password", { required: "Укажите пароль" })}
         />
         <Button
