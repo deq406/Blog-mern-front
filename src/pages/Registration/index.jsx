@@ -13,6 +13,7 @@ import { Navigate } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { IconButton, InputAdornment } from "@mui/material";
+import { useState } from "react";
 export const Registration = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
