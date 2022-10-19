@@ -13,8 +13,6 @@ import styles from "./Login.module.scss";
 import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
 import { IconButton, InputAdornment } from "@mui/material";
 import { useState } from "react";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import { InputAdornment, IconButton } from "@material-ui/core";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 export const Login = () => {
