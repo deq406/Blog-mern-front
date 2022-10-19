@@ -11,10 +11,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Login.module.scss";
 import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
+import { IconButton, InputAdornment } from "@mui/material";
+import { useState } from "react";
 
 export const Login = () => {
   const dispatch = useDispatch();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const isAuth = useSelector(selectIsAuth);
   const {
     register,
@@ -65,6 +69,19 @@ export const Login = () => {
           fullWidth
           error={Boolean(errors.password?.message)}
           helperText={errors.password?.message}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
           {...register("password", { required: "Укажите пароль" })}
         />
         <Button
