@@ -72,6 +72,7 @@ export const Login = () => {
           fullWidth
           error={Boolean(errors.password?.message)}
           helperText={errors.password?.message}
+          type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
