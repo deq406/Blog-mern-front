@@ -8,6 +8,7 @@ import {
   AddPost,
   Login,
   PostsTags,
+  NotFoundPage,
 } from "./pages";
 import { useDispatch, useSelector } from "react-redux";
 import React from "react";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/tags/:tagName" element={<PostsTags />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Container>
     </>
