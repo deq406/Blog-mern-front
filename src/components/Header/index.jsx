@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <div className={styles.root}>
-      <Container maxWidth="xs">
+      <Container maxWidth="lg">
         <div className={styles.inner}>
           <Link className={styles.logo} to="/">
             <div>BLOG</div>
